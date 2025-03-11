@@ -2,5 +2,12 @@
     "version": 2,
     "functions": {
         "api/**/*.php": { "runtime": "vercel-php@0.7.3" }
-    }
+    },
+    "rewrites": [
+        { "source": "/index", "destination": "/api/index/index.php" },
+        { "source": "/login", "destination": "/api/login/index.php" },
+        { "source": "/manage", "destination": "/api/manage/index.php" },
+        { "source": "/logout", "destination": "/api/logout/index.php" },
+        { "source": "/", "destination": "/api/index/index.php" }
+    ]
 }
