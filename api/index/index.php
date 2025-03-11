@@ -1,6 +1,6 @@
 <?php
-include "../includes/header.php"; // api/内から1階層上
-phpinfo();
+include __DIR__ . "/../includes/header.php"; // 明示的に__DIR__使用
+phpinfo(); // デバッグ用
 $db = new PDO("pgsql:host=us-east-1.sql.xata.sh;dbname=ff14_db;sslmode=require", "j308qh", "xau_kPnYCExI9wjSBko08ffZxuf5vG43s8YE2");
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $stmt = $db->query("SELECT filename, filetype, filedata FROM uploads");

@@ -1,13 +1,11 @@
 <?php
 session_start();
-include "../includes/header.php";
-$admin_user = "admin";
-$admin_pass = "password123";
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("Location: /login"); // パスを修正
     exit;
 }
-include "/includes/header.php"; // 絶対パスに変更
+include __DIR__ . "/../includes/header.php"; // 明示的に__DIR__使用
+phpinfo(); // デバッグ用
 $db = new PDO("pgsql:host=us-east-1.sql.xata.sh;dbname=ff14_db;sslmode=require", "j308qh", "xau_kPnYCExI9wjSBko08ffZxuf5vG43s8YE2");
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["file"])) {
