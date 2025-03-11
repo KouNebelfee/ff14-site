@@ -10,6 +10,6 @@
     <header>
         <nav>
             <a href="/index.php">ホーム</a> | 
-            <a href="/admin/login.php">管理モード</a>
+            <a href="/login.php">管理モード</a>
         </nav>
     </header>
