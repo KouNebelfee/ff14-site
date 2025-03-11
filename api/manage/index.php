@@ -1,5 +1,7 @@
 <?php
 session_start();
+include "../includes/header.php";
+$db = new PDO("pgsql:host=us-east-1.sql.xata.sh;dbname=ff14_db;sslmode=require", "j308qh", "xau_kPnYCExI9wjSBko08ffZxuf5vG43s8YE2");
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("Location: login.php");
     exit;

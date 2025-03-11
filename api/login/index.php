@@ -1,5 +1,8 @@
 <?php
 session_start();
+include "../includes/header.php";
+$admin_user = "admin";
+$admin_pass = "password123";
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("Location: /login"); // パスを修正
     exit;
