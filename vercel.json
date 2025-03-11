@@ -1,9 +1,6 @@
 {
     "version": 2,
     "framework": null,
-    "routes": [
-        { "src": "/(.*)", "dest": "/public/$1" }
-    ],
     "rewrites": [
         { "source": "/(.*)", "destination": "/public/$1" }
     ]
