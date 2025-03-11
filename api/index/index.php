@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . "/../../../includes/header.php"; // 3階層上
+include "/includes/header.php"; // プロジェクトルートから
 $db = new PDO("pgsql:host=us-east-1.sql.xata.sh;dbname=ff14_db;sslmode=require", "j308qh", "xau_kPnYCExI9wjSBko08ffZxuf5vG43s8YE2");
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $stmt = $db->query("SELECT filename, filetype, filedata FROM uploads");
