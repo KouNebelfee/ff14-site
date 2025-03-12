@@ -1,13 +1,17 @@
 <?php
 include __DIR__ . "/../includes/header.php";
-$url = "https://Kou_Nebelfee.xata.sh/db/ff14_db:main/tables/uploads";
+$url = "https://Kou-Nebelfee-s-workspace-j308qh.xata.sh/db/ff14_db:main/tables/uploads";
 $context = stream_context_create([
     "http" => [
-        "header" => "Authorization: Bearer xau_kPnYCExI9wjSBko08ffZxuf5vG43s8YE2"
+        "header" => "Authorization: Bearer xau_bfTIFSguQmxuCs0Pm7wRh5ZA1kwtD7PP3"
     ]
 ]);
 $response = file_get_contents($url, false, $context);
-$data = json_decode($response, true);
-echo "ようこそ！私のFF14の世界へ<br>";
-print_r($data); // データ確認用
+if ($response === false) {
+    echo "エラー: APIに接続できませんでした。URLまたはキーを確認してください。";
+} else {
+    $data = json_decode($response, true);
+    echo "ようこそ！私のFF14の世界へ<br>";
+    print_r($data);
+}
 ?>
